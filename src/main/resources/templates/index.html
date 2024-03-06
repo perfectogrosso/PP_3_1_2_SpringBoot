@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h2>users</h2>
+<br>
+<div th:each="user : ${users}">
+    <a th:href="@{/users?userId={id}(id=${user.getId()})}"
+       th:text="${user.getName() + ', ' + user.getAge()}">user</a>
+</div>
+<br>
+<hr>
+<a href="users/new">Новый пользователь</a>
+</body>
+</html>
